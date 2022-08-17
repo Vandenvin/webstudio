@@ -65,12 +65,17 @@
     transition: background-color 250ms $delay,
         color 250ms $delay, box-shadow 250ms $delay;
 
-    &:hover,
-    &:focus {
+    &:hover{
         background-color: $focus-color;
-        color: $text-third-white-color;
+        color: $text-third-white-color;     
         box-shadow: $shadow-portfolio-filter;
     }
+}
+
+.portfolio-filter__btn.js-active-btn{
+    background-color: $focus-color;
+    color: $text-third-white-color;
+    box-shadow: $shadow-portfolio-filter;
 }
 
 
@@ -85,9 +90,12 @@
     }
 
 }
+.portfolio-project__item{
+    display: none;
+}
 
-.portfolio-project__item {
-
+.portfolio-project__item.js-active-card {
+    display: block;
     max-width: 450px;
     width: 100%;
 

@@ -139,21 +139,32 @@
                 <!-- Скрытый заголовок -->
                 <h1 class="section__title section__title--hidden">Портофоліо</h1>
                 <ul class="portfolio-filter list">
-                    <li class="portfolio-filter__item"><button type="button" class="portfolio-filter__btn">Всі</button>
+
+                    <li class="portfolio-filter__item">
+                        <button type="button" class="portfolio-filter__btn js-active-btn" data-value="all">Всі</button>
                     </li>
-                    <li class="portfolio-filter__item"><button type="button"
-                            class="portfolio-filter__btn">Веб-сайти</button></li>
-                    <li class="portfolio-filter__item"><button type="button"
-                            class="portfolio-filter__btn">Додатки</button></li>
-                    <li class="portfolio-filter__item"><button type="button"
-                            class="portfolio-filter__btn">Дизайн</button></li>
-                    <li class="portfolio-filter__item"><button type="button"
-                            class="portfolio-filter__btn">Маркетинг</button></li>
+
+                    <li class="portfolio-filter__item">
+                        <button type="button" class="portfolio-filter__btn" data-value="website">Веб-сайти</button>
+                    </li>
+
+                    <li class="portfolio-filter__item">
+                        <button type="button" class="portfolio-filter__btn" data-value="application">Додатки</button>
+                    </li>
+
+                    <li class="portfolio-filter__item">
+                        <button type="button" class="portfolio-filter__btn" data-value="design">Дизайн</button>
+                    </li>
+
+                    <li class="portfolio-filter__item">
+                        <button type="button" class="portfolio-filter__btn" data-value="marketing">Маркетинг</button>
+                    </li>
+
                 </ul>
 
                 <div>
                     <ul class="portfolio-project">
-                        <li class="portfolio-project__item">
+                        <li class="portfolio-project__item js-active-card" data-value="card-website">
                             <a href="#" class="portfolio-project__link">
                                 <div class="portfolio-project__card-img">
 
@@ -180,7 +191,7 @@
                             </a>
                         </li>
 
-                        <li class="portfolio-project__item">
+                        <li class="portfolio-project__item js-active-card" data-value="card-design">
                             <a href="#" class="portfolio-project__link">
                                 <div class="portfolio-project__card-img">
 
@@ -207,7 +218,7 @@
                             </a>
                         </li>
 
-                        <li class="portfolio-project__item">
+                        <li class="portfolio-project__item js-active-card" data-value="card-application">
                             <a href="#" class="portfolio-project__link">
                                 <div class="portfolio-project__card-img">
 
@@ -235,7 +246,7 @@
                             </a>
                         </li>
 
-                        <li class="portfolio-project__item">
+                        <li class="portfolio-project__item js-active-card" data-value="card-marketing">
                             <a href="#" class="portfolio-project__link">
                                 <div class="portfolio-project__card-img">
 
@@ -262,7 +273,8 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="portfolio-project__item">
+
+                        <li class="portfolio-project__item js-active-card" data-value="card-application">
                             <a href="#" class="portfolio-project__link">
                                 <div class="portfolio-project__card-img">
 
@@ -290,8 +302,7 @@
                             </a>
                         </li>
 
-
-                        <li class="portfolio-project__item">
+                        <li class="portfolio-project__item js-active-card" data-value="card-website">
                             <a href="#" class="portfolio-project__link">
                                 <div class="portfolio-project__card-img">
 
@@ -320,7 +331,7 @@
                             </a>
                         </li>
 
-                        <li class="portfolio-project__item">
+                        <li class="portfolio-project__item js-active-card" data-value="card-design">
                             <a href="#" class="portfolio-project__link">
                                 <div class="portfolio-project__card-img">
 
@@ -348,7 +359,7 @@
                             </a>
                         </li>
 
-                        <li class="portfolio-project__item">
+                        <li class="portfolio-project__item js-active-card" data-value="card-marketing">
                             <a href="#" class="portfolio-project__link">
                                 <div class="portfolio-project__card-img">
 
@@ -376,7 +387,7 @@
                             </a>
                         </li>
 
-                        <li class="portfolio-project__item">
+                        <li class="portfolio-project__item js-active-card" data-value="card-application">
                             <a href="#" class="portfolio-project__link">
                                 <div class="portfolio-project__card-img">
 
@@ -506,7 +517,8 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
         integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
         crossorigin="anonymous"></script>
-    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/mobile-menu.js" type="module"></script>
+    <script src="./js/portfolio-filter.js" type="module"></script>
 </body>
 
 </html>
