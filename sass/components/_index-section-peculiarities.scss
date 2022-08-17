@@ -1,0 +1,74 @@
+// Стилизация блока Peculiarities
+
+// Cкрываем заголовок
+.section__title--hidden {
+    @extend %hidden;
+}
+
+.peculiarities-list {
+    @extend %list;
+
+    @media screen and (min-width:768px){
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+    }
+}
+
+.peculiarities-list__item {
+        
+    @media screen and (max-width:767px) {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (min-width:768px) {
+        margin: 15px;
+        flex-basis: calc((100% - 2 * 30px) / 2);
+    }
+
+    @media screen and (min-width:1200px) {
+        margin: 15px;
+        flex-basis: calc((100% - 4 * 30px) / 4);
+    }
+
+}
+
+
+.peculiarities-list__thumb {
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+    background: $background-third-color;
+    border-radius: 4px;
+}
+
+.peculiarities-list__title {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    @media screen and (min-width:768px){
+    text-align:start;
+    }
+}
+
+
+
+.peculiarities-list__text {
+    color: $text-second-black-color;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+}

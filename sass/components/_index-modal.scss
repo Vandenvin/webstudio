@@ -1,0 +1,267 @@
+// Стилизация модального окна
+
+// Стилизация фона 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $backdrop-bg-color;
+    opacity: 1;
+
+    transition: opacity 250ms $delay;
+
+    overflow-y: scroll;
+}
+
+// Стилизация неактивного модального окна
+.backdrop--is-hidden {
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+
+    & .modal {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+}
+
+
+// Стилизация активного модального окна
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    max-width: 450px;
+    width: 100%;
+    min-height: 609px;
+
+    padding: 40px;
+
+    background-color: $background-primary-color;
+    box-shadow: $shadow-modal-window;
+    border-radius: 4px;
+
+    transition: transform 250ms $delay;
+
+    @media screen and (min-width: 1200px) {
+        max-width: 528px;
+    }
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+    border: 1px solid $border-modalclose-color;
+    background-color: $background-primary-color;
+
+    transition: fill 250ms $delay;
+
+    &:hover, &:focus {
+        fill: $focus-color;
+    }
+}
+
+.modal__title {
+    margin-bottom: 12px;
+
+    text-align: center;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+
+    color: $text-primary-black-color;
+}
+
+.modal-form {
+    max-width: 370px;
+
+    @media screen and (min-width: 1200px) {
+        max-width: 448px;
+    }
+
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 10px;
+}
+
+.form-field__label {
+    margin-bottom: 4px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+
+    color: $text-second-black-color;
+}
+
+.form-field__input {
+    width: 100%;
+    height: 40px;
+
+    border: $border-form-field;
+    border-radius: 4px;
+
+    padding-left: 42px;
+
+    transition: border-color 250ms $delay;
+    outline: none;
+
+    :focus {
+        border-color: $focus-color;
+    }
+}
+
+.form-field__thumb {
+    position: relative;
+}
+
+.form-field__icon {
+    position: absolute;
+
+    top: 50%;
+    left: 11px;
+    transform: translateY(-50%);
+
+    transition: fill 250ms $delay;
+
+    .form-field__input:focus + & {
+        fill: $focus-color;
+    }
+}
+
+
+.form-field__comment {
+    height: 120px;
+    padding: 12px 16px;
+
+    margin-bottom: 10px;
+
+    border: $border-form-field;
+    border-radius: 4px;
+    outline: none;
+
+    resize: none;
+
+    transition: fill 250ms $delay;
+
+    &:focus {
+        border-color: $focus-color;
+    }
+
+    &::placeholder {
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.01em;
+
+        color: $text-color-modal-placeholder;
+    }
+}
+
+.newsletter__checkbox {
+    appearance: none;
+}
+
+.newsletter__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.03em;
+
+    color: $text-second-black-color;
+
+    @media screen and (min-width: 1200px){
+        font-size: 14px;
+        line-height: 1.71;
+    }
+}
+
+.newsletter__icon {
+    margin-right: 7px;
+
+    width: 16px;
+    height: 15px;
+
+    border: 2px solid $text-primary-black-color;
+    opacity: 0.2;
+    border-radius: 2px;
+
+    .newsletter__checkbox:checked+& {
+        background-color: $focus-color;
+        border-color: transparent;
+        opacity: 1;
+
+        background-image: url(../../images/index/icon-check.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.newsletter__link {
+    text-decoration: none;
+    text-decoration-line: underline;
+
+    color: $focus-color;
+}
+
+.modal-form__submit-btn {
+    width: 200px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: auto;
+    margin-left: auto;
+    border: none;
+
+    background-color: $focus-color;
+    box-shadow: $shadow-button;
+    border-radius: 4px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+
+    color: $background-primary-color;
+
+    transition: background-color 250ms $delay;
+
+    &:hover, &:focus {
+        background-color: $focus-second-color;
+    }
+}

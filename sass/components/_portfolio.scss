@@ -1,0 +1,236 @@
+// Стилизация страницы portfolio.html
+
+.portfolio {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @media screen and (min-width: 1200px) {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+
+}
+
+// Стилизация блока с кнопкапи-фильтрами
+
+// Cкрываем заголовок
+.section__title--hidden {
+    @extend %hidden;
+}
+
+.portfolio-filter {
+    @extend %list;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 768px){
+        margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+    }
+}
+
+.portfolio-filter__item{
+    margin-bottom: 8px;
+
+    &:not(:last-child) {
+        margin-right: 8px;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+    }
+}
+
+.portfolio-filter__btn {
+    background-color: $background-third-color;
+    color: $text-primary-black-color;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    letter-spacing: 0.03em;
+
+    cursor: pointer;
+    padding: 6px 22px;
+    border-style: inherit;
+    border-radius: 4px;
+
+    transition: background-color 250ms $delay,
+        color 250ms $delay, box-shadow 250ms $delay;
+
+    &:hover,
+    &:focus {
+        background-color: $focus-color;
+        color: $text-third-white-color;
+        box-shadow: $shadow-portfolio-filter;
+    }
+}
+
+
+// Стилизация блока с карточками
+.portfolio-project {
+    @extend %list;
+
+    @media screen and (min-width:768px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+    }
+
+}
+
+.portfolio-project__item {
+
+    max-width: 450px;
+    width: 100%;
+
+    @media screen and (max-width:767px) {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        max-width: 354px;
+
+        margin: 15px;
+        flex-basis: calc((100% - 2 * 30px) / 2);
+    }
+
+    @media screen and (min-width: 1200px) {
+        max-width: 370px;
+
+        flex-basis: calc((100% - 3 * 30px) / 3);
+    }
+
+
+}
+
+.portfolio-project__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    transition: box-shadow 250ms $delay;
+
+    &:hover,
+    &:focus {
+        box-shadow: $shadow-portfiolio-card-focus;
+    }
+}
+
+.portfolio-project__card-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-project__img{
+    max-width: 450px;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+        max-width: 354px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        max-width: 370px;
+    }
+}
+
+.portfolio-project__hover-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    width: 100%;
+    height: 100%;
+    background-color: $backround-portfolio-card-hover;
+
+    transform: translateY(101%);
+    transition: transform 250ms $delay;
+
+    .portfolio-project__link:hover &,
+    .portfolio-project__link:focus & {
+        transform: translateY(0);
+    }
+
+}
+
+.portfolio-project__hover-text {
+    max-width: 402px;
+    // max-height: 140px;
+
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+
+    color: $background-primary-color;
+
+    @media screen and (min-width: 768px) {
+        max-width: 306px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        max-width: 322px;
+    }
+
+}
+
+
+.portfolio-project__img-sign {
+    
+    max-width: 450px;
+    width:100%;
+
+    flex-grow: 1;
+
+    padding: 20px 24px;
+
+
+    border-right: 1px solid $border-portfolio-card;
+    border-bottom: 1px solid $border-portfolio-card;
+    border-left: 1px solid $border-portfolio-card;
+
+    @media screen and (min-width: 768px) {
+        max-width: 354px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        max-width: 370px;
+    }
+
+}
+
+.portfolio-project__title {
+    color: $text-primary-black-color;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+
+    margin-bottom: 4px;
+}
+
+.portfolio-project__text {
+    color: $text-second-black-color;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.03em;
+}
+
+.portfolio-project__link {
+    text-decoration: none;
+}

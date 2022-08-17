@@ -1,0 +1,44 @@
+// Стилизация блока work
+.work {
+    display: none;
+    padding-top: 0;
+
+    @media screen and (min-width: 1200px) {
+        display: block;
+    }
+}
+
+
+.work-list {
+    @extend %list;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.work-list__item {
+    position: relative;
+}
+
+.work-list__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: $background-primary-color;
+    background-color: $background-worklist-title-color;
+}

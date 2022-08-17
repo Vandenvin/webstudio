@@ -1,0 +1,51 @@
+// социальные сети в секции Наша Команда
+.social-links {
+    @extend %list;
+
+    display: flex;
+    justify-content: space-between; 
+}
+
+.social-links__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    fill: $border-client-color;
+    background-color: $background-primary-color;
+
+    transition: fill 250ms $delay,
+        background-color 250ms $delay;
+
+    &:hover,
+    &:focus {
+        fill: $background-primary-color;
+        background-color: $focus-color;
+    }
+}
+
+.social-links__thumb {
+    width: 20px;
+    height: 20px;
+}
+
+
+// социальные сети в футере
+
+
+.social-links__link--footer {
+    fill: $background-primary-color;
+    background-color: $background-connect-social-link-color;
+
+    transition: background-color 250ms $delay;
+
+    &:hover,
+    &:focus {
+        background-color: $focus-color;
+    }
+}

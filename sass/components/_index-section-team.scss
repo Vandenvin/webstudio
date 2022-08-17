@@ -1,0 +1,83 @@
+// Стилизация блока team
+.team {
+    background-color: $background-third-color;
+}
+
+.team-list {
+    @extend %list;
+
+    @media screen and (min-width:768px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+    }
+}
+
+.team-list__item {
+    background-color: $background-primary-color;
+    box-shadow: $shadow-team-item-card;
+    border-radius: 0px 0px 4px 4px;
+
+    padding-bottom: 24px;
+
+    @media screen and (max-width:767px) {
+        &:not(:last-child){
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (min-width:768px) {
+        margin: 15px;
+        flex-basis: calc((100% - 2 * 30px) / 2);
+    }
+
+    @media screen and (min-width:1200px) {
+        padding-bottom: 30px;
+
+        margin: 15px;
+        flex-basis: calc((100% - 4 * 30px) / 4);
+    }
+
+}
+
+.team-list__img {
+    margin-bottom: 30px;
+
+    max-width: 450px;
+    width: 100%;
+
+    @media screen and (min-width:768px) {
+        width: 354px;       
+    }
+
+    @media screen and (min-width:1200px) {
+        width: 270px;
+    }
+
+}
+
+.team-list__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    margin-bottom: 10px;
+}
+
+.team-list__text {
+    color: $text-second-black-color;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    margin-bottom: 16px;
+}
+
+.team-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

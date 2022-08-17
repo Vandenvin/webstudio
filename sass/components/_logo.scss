@@ -1,0 +1,41 @@
+// Общие стили для логотипа
+.logo {
+    display: inline-block;
+
+    text-decoration: none;
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+}
+
+.logo__prefix {
+    color: $focus-color;
+}
+
+// Изменения для логотипа в хедере
+.page-header_logo {
+    padding-top: 24px;
+    padding-bottom: 25px;
+
+    color: $text-logo-black-color;
+
+    @media screen and (min-width:768px){
+        margin-right: 87px;
+    }
+
+    @media screen and (min-width:1200px) {
+        margin-right: 92px;
+    }
+}
+
+// Изменения для логотипа в футтере
+.page-footer_logo {
+
+    
+    margin-bottom: 20px;
+
+    color: $background-primary-color;
+}

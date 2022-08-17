@@ -1,0 +1,188 @@
+// Стилизация шапки страницы
+.page-header {
+    border-bottom: 1px solid $border-header-line;
+}
+
+.header {
+
+
+    @media screen and (min-width:768px){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;   
+    }
+}
+
+
+// Стилизация навигации страницы (лого и сслыки переходы на другие страницы)
+
+.header-navigation {
+    display: flex;
+    align-items: center;
+}
+
+
+.navigation {
+    @extend %list;
+    display: none;
+    // position: relative;
+
+    @media screen and (min-width:768px){
+        display: flex;
+    }
+}
+
+.navigation__item:not(:last-child) {
+    margin-right: 50px;
+}
+
+.navigation__link {
+    position: relative;
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    text-decoration: none;
+    color: $text-primary-black-color;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    transition: color 250ms $delay;
+
+    &:hover,
+    &:focus {
+        color: $focus-color;
+        fill: $focus-color;
+    }
+}
+
+// Стилизация (плдчеркивание и анимация) ссылки если страница текущая
+.navigation__link--current {
+    color: $focus-color;
+
+    &::after {
+        display: inline-block;
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 4px;
+
+        bottom: 0;
+        left: 0;
+        background-color: $focus-color;
+        border-radius: 2px;
+
+        animation: animation 750ms linear;
+    }
+}
+
+
+@keyframes animation {
+
+    10%,
+    90% {
+        transform: translateX(-1px);
+    }
+
+    20%,
+    80% {
+        transform: translateX(2px);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translateX(-4px);
+    }
+
+    40%,
+    60% {
+        transform: translateX(4px);
+    }
+}
+
+
+// Стилизация контактов
+.header-contact {
+    @extend %list;
+
+    display: none;
+    
+
+
+    @media screen and (min-width:768px) {
+            display: inline-block;
+
+            margin-top: 0;
+            margin-left: auto;
+        }
+
+    @media screen and (min-width:1200px){
+        display: flex;
+    }
+}
+
+.header-contact__item{
+    
+    &:not(:last-child) {
+    margin-bottom: 10px;
+
+        @media screen and (min-width:1200px) {
+            margin-bottom: 0px;
+            margin-right: 30px;
+        }
+   
+    }
+
+    @media screen and (min-width:1200px) {
+        padding: 32px 0;
+    }
+
+}
+
+.header-contact__link {
+    display: flex;
+    align-items: center;
+    
+    // padding-top: 32px;
+    // padding-bottom: 32px;
+
+    text-decoration: none;
+    color: $text-second-black-color;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+
+    fill: $text-second-black-color;
+
+    transition: color 250ms $delay, fill 250ms $delay;
+
+    &:hover,
+    &:focus {
+        color: $focus-color;
+        fill: $focus-color;
+    }
+
+    @media screen and (min-width:1200px){
+        font-size: 14px;
+        line-height: 1.14;
+    }
+
+}
+
+
+// Стилизация иконок в контактах
+.header-contact__thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+
+    @media screen and (min-width:1200px){
+        margin-right: 10px;
+    }
+}
